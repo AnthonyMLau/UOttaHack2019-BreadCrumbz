@@ -14,6 +14,8 @@ When the user enters their final route destination, our program utilizes many di
 
 We created a web application using express.js that employs Restful APIs allowing us to connect the community with restaurants, supermarkets and homeless shelters. Restaurants are able to post their location when they have excess food through a post request. Then, a notification is sent to all registered drivers who are within a specified range. A Google Maps API then calculates the most efficient route and whoever has the shortest route takes the delivery request by utilizing Nearby Searches and Directions API. Then, Twilio's API waits for a keyword "Delivered " and obtained order number. This order number is then confirmed by calling the shelter on file and asking them if they did receive that specific order.
 
+![](architecture%20map%20of%20project.png)
+
 ## Challenges we ran into
 
 When we were planning our project, we were attempting to use Solaces API, however their services were blocked by the school's network. They were unable to provide a reasonable solution, so we had to find other alternatives. Upon realizing this, team morale dropped drastically and one of our team members decided to leave and stay at home instead. In the end, we followed through with the idea and have succeeded in overcoming the obstacle.
