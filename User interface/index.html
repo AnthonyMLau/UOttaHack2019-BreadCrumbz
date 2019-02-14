@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Material Design Bootstrap</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Start your project here-->
+  <div class="background-img">
+    <img src="C:\Users\Anthony\Desktop\Breadcrumbz\Public\MDB-Free_4.7.1\css\map_background.png" class="img-fluid">
+  </div>
+  <div class="d-flex justify-content-center">
+    <div class="align-middle">
+      <button type="button" class="btn btn-warning center" id="butt" onclick="sendLocation()"><a href="https://www.google.com/maps/dir/45.4289,-75.6844/45.4286132,-75.6908283/45.4014015,-75.7261914/Canada+Agriculture+and+Food+Museum,+Prince+of+Wales+Drive,+Ottawa,+ON/@45.408173,-75.7096952,13.74z/data=!4m11!4m10!1m0!1m0!1m0!1m5!1m1!1s0x4cce05d4569e7415:0x82d7b7cc06b31338!2m2!1d-75.7093198!2d45.3875416!3e0">Send Location</a></button>
+
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('a[href^="https://"]').each(function(){ 
+            var oldUrl = $(this).attr("href"); // Get current url
+            var newUrl = oldUrl.replace("https://google.com", url ); // Create new url
+            $(this).attr("href", newUrl); // Set herf value
+        });
+    });
+</script>
+
+  <script>
+    function sendLocation() {
+      console.log('11111111111111111111111111111111111111111111111')
+      //document.getElementById('butt').value = 'Location sent!';
+      (async () => {
+        const rawResponse = await fetch('http://localhost:3000/SuperMarketPublish', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: 'asdf',
+            lat: 40.52,
+            long: 101.4563
+          })
+        });
+        const content = await rawResponse.json();
+
+        console.log(content);
+      })();
+
+      $.ajax({
+        type: "POST",
+        url: "C:\Users\Anthony\Desktop\Breadcrumbz\Public\bestrout.py",
+        data: {
+          param: text
+        }
+      }).done(function (o) {
+        console.log("asasdfasdfasdhelelowefosdfklasdfjkahsdklfhadfjk");
+      });
+
+      
+
+    }
+  </script>
+
+  <!-- /Start your project here-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.js"></script>
+</body>
+
+</html>
